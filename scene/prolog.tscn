@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck3oj2mnsp0o2"]
+
+[ext_resource type="Script" uid="uid://biagj4rfksicr" path="res://scripts/prolog.gd" id="1_3yprg"]
+[ext_resource type="PackedScene" uid="uid://dqfrvbbojk3ye" path="res://UI/text_box.tscn" id="1_kndlf"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_3yprg")
+
+[node name="text_box" parent="." instance=ExtResource("1_kndlf")]

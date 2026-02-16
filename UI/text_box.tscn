@@ -1,0 +1,129 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqfrvbbojk3ye"]
+
+[ext_resource type="Script" uid="uid://dn3r00batsfbv" path="res://scripts/src/base/dialog.gd" id="1_k7ve7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ss407"]
+bg_color = Color(0.12, 0.12, 0.15, 0.95)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.4, 0.6, 0.9, 0.8)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_size = 8
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button"]
+bg_color = Color(0.3, 0.5, 0.8, 0.3)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5, 0.7, 1, 0.6)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="text_box" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k7ve7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -108.0
+offset_top = -97.99994
+offset_right = 438.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.4469977, 0.3840678)
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Background" type="Panel" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ss407")
+
+[node name="NameBackground" type="Panel" parent="CanvasLayer/MarginContainer/Background"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 150.0
+offset_bottom = 38.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_button")
+
+[node name="name" type="RichTextLabel" parent="CanvasLayer/MarginContainer/Background"]
+layout_mode = 0
+offset_left = 20.26872
+offset_top = 8.640661
+offset_right = 566.26874
+offset_bottom = 185.64066
+scale = Vector2(0.847551, 0.91293025)
+theme_override_colors/default_color = Color(0.9, 0.95, 1, 1)
+theme_override_font_sizes/normal_font_size = 18
+text = "nama"
+fit_content = true
+scroll_active = false
+
+[node name="message" type="RichTextLabel" parent="CanvasLayer/MarginContainer/Background"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 520.0
+offset_bottom = 160.0
+theme_override_colors/default_color = Color(0.85, 0.85, 0.9, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "Hello World"
+fit_content = true
+scroll_active = false
+
+[node name="skip_button" type="Button" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 101.0
+offset_top = -35.0
+offset_right = 141.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5859683, 0.3863799)
+theme_override_colors/font_color = Color(0.7, 0.8, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+text = ">>"
+flat = true
+
+[node name="CharacterImage" type="TextureRect" parent="CanvasLayer"]
+z_index = -1
+texture_filter = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 4

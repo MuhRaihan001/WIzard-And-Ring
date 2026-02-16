@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://b0biip11kcfm2"]
+
+[ext_resource type="Script" uid="uid://ctft7xw0auo7u" path="res://scripts/main_scene.gd" id="1_qvu5t"]
+[ext_resource type="PackedScene" uid="uid://nmcuofd4fwfm" path="res://scene/maps/main_map.tscn" id="1_ry1uq"]
+[ext_resource type="PackedScene" uid="uid://52kyptr8uegq" path="res://entity/playable/Player.tscn" id="2_fb1ex"]
+[ext_resource type="PackedScene" uid="uid://dqfrvbbojk3ye" path="res://UI/text_box.tscn" id="3_fb1ex"]
+[ext_resource type="PackedScene" uid="uid://cptq16c07b3rl" path="res://entity/playable/red_form.tscn" id="4_4wnd8"]
+[ext_resource type="PackedScene" uid="uid://tx0r6jbsmqxp" path="res://entity/playable/Reinhard.tscn" id="6_jsie2"]
+[ext_resource type="PackedScene" uid="uid://bce61gfh700od" path="res://UI/select_char.tscn" id="8_hrphr"]
+[ext_resource type="PackedScene" uid="uid://cweny73u64g3i" path="res://entity/npc/passive/test.tscn" id="8_pi0uh"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(18, 3)
+script = ExtResource("1_qvu5t")
+
+[node name="Map" parent="." instance=ExtResource("1_ry1uq")]
+position = Vector2(-5, 5)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("8_pi0uh")]
+position = Vector2(667, 403)
+
+[node name="player" parent="." instance=ExtResource("2_fb1ex")]
+position = Vector2(385, 254)
+
+[node name="Rein" parent="." instance=ExtResource("6_jsie2")]
+position = Vector2(806, 209)
+
+[node name="text_box" parent="." instance=ExtResource("3_fb1ex")]
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 869.0
+offset_top = 983.0
+offset_right = 869.0
+offset_bottom = 983.0
+grow_vertical = 0
+
+[node name="change_character" parent="." instance=ExtResource("8_hrphr")]
+
+[node name="form" parent="." instance=ExtResource("4_4wnd8")]
+position = Vector2(396.99997, 283)
+scale = Vector2(2.7520173, 2.7520173)
+
+[editable path="player"]

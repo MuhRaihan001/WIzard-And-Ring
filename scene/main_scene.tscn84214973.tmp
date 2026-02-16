@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0biip11kcfm2"]
+
+[ext_resource type="PackedScene" uid="uid://nmcuofd4fwfm" path="res://scene/maps/main_map.tscn" id="1_ry1uq"]
+[ext_resource type="PackedScene" uid="uid://52kyptr8uegq" path="res://entity/Player.tscn" id="2_fb1ex"]
+[ext_resource type="PackedScene" uid="uid://dqfrvbbojk3ye" path="res://text_box.tscn" id="3_fb1ex"]
+[ext_resource type="PackedScene" uid="uid://cptq16c07b3rl" path="res://entity/Shin.tscn" id="4_4wnd8"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(18, 3)
+
+[node name="Map" parent="." instance=ExtResource("1_ry1uq")]
+position = Vector2(-5, 5)
+
+[node name="player" parent="." instance=ExtResource("2_fb1ex")]
+position = Vector2(376, 281)
+
+[node name="text_box" parent="." instance=ExtResource("3_fb1ex")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+offset_left = 869.0
+offset_top = 983.0
+offset_right = 869.0
+offset_bottom = 983.0
+grow_vertical = 0
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_4wnd8")]
+position = Vector2(412, 289)
+
+[editable path="Map"]
