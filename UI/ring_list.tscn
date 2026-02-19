@@ -1,0 +1,476 @@
+[gd_scene load_steps=25 format=3 uid="uid://b4jsioo6k7hvh"]
+
+[ext_resource type="Script" uid="uid://bj8rd584m5ta" path="res://scripts/src/system/select_ring.gd" id="1_snj53"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0.06, 0.06, 0.09, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0, 0, 0, 0.7)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_transparent"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_red_outer"]
+bg_color = Color(0.82, 0.12, 0.12, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_red_stripe"]
+bg_color = Color(1, 0.42, 0.42, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_red_inner"]
+bg_color = Color(0.06, 0.06, 0.09, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_red_gem"]
+bg_color = Color(1, 0.25, 0.25, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_blue_outer"]
+bg_color = Color(0.1, 0.28, 0.85, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_blue_stripe"]
+bg_color = Color(0.04, 0.1, 0.48, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_blue_inner"]
+bg_color = Color(0.06, 0.06, 0.09, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_blue_gem"]
+bg_color = Color(0.28, 0.55, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yellow_outer"]
+bg_color = Color(0.92, 0.78, 0.05, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yellow_stripe"]
+bg_color = Color(1, 0.58, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yellow_inner"]
+bg_color = Color(0.06, 0.06, 0.09, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yellow_gem"]
+bg_color = Color(1, 0.95, 0.25, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_black_outer"]
+bg_color = Color(0.3, 0.3, 0.34, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_black_stripe_h"]
+bg_color = Color(0.48, 0.48, 0.52, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_black_stripe_v"]
+bg_color = Color(0.48, 0.48, 0.52, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_black_inner"]
+bg_color = Color(0.06, 0.06, 0.09, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_black_gem"]
+bg_color = Color(0.58, 0.58, 0.62, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pink_outer"]
+bg_color = Color(1, 0.35, 0.65, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 6
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pink_stripe"]
+bg_color = Color(1, 0.68, 0.88, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 2
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pink_inner"]
+bg_color = Color(0.06, 0.06, 0.09, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 2
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pink_gem"]
+bg_color = Color(1, 0.62, 0.88, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="ring_list" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_snj53")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -64.0
+offset_right = 330.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.21662791, 0.21662791)
+size_flags_horizontal = 4
+
+[node name="background" type="Panel" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bg")
+
+[node name="Title" type="Label" parent="CanvasLayer/MarginContainer/background"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 7.0
+offset_right = 294.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0.6, 0.6, 0.7, 1)
+theme_override_font_sizes/font_size = 10
+text = "— SELECT RING —"
+horizontal_alignment = 1
+
+[node name="RedRing" type="Button" parent="CanvasLayer/MarginContainer/background"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 22.0
+offset_right = 76.0
+offset_bottom = 122.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_transparent")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_transparent")
+theme_override_styles/hover = SubResource("StyleBoxFlat_transparent")
+
+[node name="RingOuter" type="Panel" parent="CanvasLayer/MarginContainer/background/RedRing"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 10.0
+offset_right = 64.0
+offset_bottom = 70.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_red_outer")
+
+[node name="RingStripe" type="Panel" parent="CanvasLayer/MarginContainer/background/RedRing"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 36.0
+offset_right = 64.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_red_stripe")
+
+[node name="RingInner" type="Panel" parent="CanvasLayer/MarginContainer/background/RedRing"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 16.0
+offset_right = 58.0
+offset_bottom = 64.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_red_inner")
+
+[node name="Gem" type="Panel" parent="CanvasLayer/MarginContainer/background/RedRing"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 2.0
+offset_right = 48.0
+offset_bottom = 16.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_red_gem")
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/background/RedRing"]
+layout_mode = 0
+offset_top = 73.0
+offset_right = 68.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0.9, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 9
+text = "Ruby"
+horizontal_alignment = 1
+
+[node name="BlueRing" type="Button" parent="CanvasLayer/MarginContainer/background"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 22.0
+offset_right = 150.0
+offset_bottom = 122.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_transparent")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_transparent")
+theme_override_styles/hover = SubResource("StyleBoxFlat_transparent")
+
+[node name="RingOuter" type="Panel" parent="CanvasLayer/MarginContainer/background/BlueRing"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 10.0
+offset_right = 64.0
+offset_bottom = 70.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blue_outer")
+
+[node name="RingStripe" type="Panel" parent="CanvasLayer/MarginContainer/background/BlueRing"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 10.0
+offset_right = 64.0
+offset_bottom = 30.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blue_stripe")
+
+[node name="RingInner" type="Panel" parent="CanvasLayer/MarginContainer/background/BlueRing"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 16.0
+offset_right = 58.0
+offset_bottom = 64.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blue_inner")
+
+[node name="Gem" type="Panel" parent="CanvasLayer/MarginContainer/background/BlueRing"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 2.0
+offset_right = 45.0
+offset_bottom = 16.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_blue_gem")
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/background/BlueRing"]
+layout_mode = 0
+offset_top = 73.0
+offset_right = 68.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0.3, 0.55, 1, 1)
+theme_override_font_sizes/font_size = 9
+text = "Sapphire"
+horizontal_alignment = 1
+
+[node name="YellowRing" type="Button" parent="CanvasLayer/MarginContainer/background"]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 22.0
+offset_right = 224.0
+offset_bottom = 122.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_transparent")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_transparent")
+theme_override_styles/hover = SubResource("StyleBoxFlat_transparent")
+
+[node name="RingOuter" type="Panel" parent="CanvasLayer/MarginContainer/background/YellowRing"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 10.0
+offset_right = 64.0
+offset_bottom = 70.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yellow_outer")
+
+[node name="RingStripe" type="Panel" parent="CanvasLayer/MarginContainer/background/YellowRing"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 10.0
+offset_right = 38.0
+offset_bottom = 70.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yellow_stripe")
+
+[node name="RingInner" type="Panel" parent="CanvasLayer/MarginContainer/background/YellowRing"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 16.0
+offset_right = 58.0
+offset_bottom = 64.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yellow_inner")
+
+[node name="Gem" type="Panel" parent="CanvasLayer/MarginContainer/background/YellowRing"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 2.0
+offset_right = 54.0
+offset_bottom = 14.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yellow_gem")
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/background/YellowRing"]
+layout_mode = 0
+offset_top = 73.0
+offset_right = 68.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(1, 0.9, 0.2, 1)
+theme_override_font_sizes/font_size = 9
+text = "Topaz"
+horizontal_alignment = 1
+
+[node name="BlackRing" type="Button" parent="CanvasLayer/MarginContainer/background"]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 22.0
+offset_right = 298.0
+offset_bottom = 122.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_transparent")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_transparent")
+theme_override_styles/hover = SubResource("StyleBoxFlat_transparent")
+
+[node name="RingOuter" type="Panel" parent="CanvasLayer/MarginContainer/background/BlackRing"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 10.0
+offset_right = 64.0
+offset_bottom = 70.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_black_outer")
+
+[node name="RingStripeH" type="Panel" parent="CanvasLayer/MarginContainer/background/BlackRing"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 36.0
+offset_right = 64.0
+offset_bottom = 43.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_black_stripe_h")
+
+[node name="RingStripeV" type="Panel" parent="CanvasLayer/MarginContainer/background/BlackRing"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 10.0
+offset_right = 38.0
+offset_bottom = 70.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_black_stripe_v")
+
+[node name="RingInner" type="Panel" parent="CanvasLayer/MarginContainer/background/BlackRing"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 18.0
+offset_right = 56.0
+offset_bottom = 62.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_black_inner")
+
+[node name="Gem" type="Panel" parent="CanvasLayer/MarginContainer/background/BlackRing"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 2.0
+offset_right = 47.0
+offset_bottom = 15.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_black_gem")
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/background/BlackRing"]
+layout_mode = 0
+offset_top = 73.0
+offset_right = 68.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0.6, 0.6, 0.65, 1)
+theme_override_font_sizes/font_size = 9
+text = "Onyx"
+horizontal_alignment = 1
+
+[node name="PinkRing" type="Button" parent="CanvasLayer/MarginContainer/background"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 22.0
+offset_right = 372.0
+offset_bottom = 122.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_transparent")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_transparent")
+theme_override_styles/hover = SubResource("StyleBoxFlat_transparent")
+
+[node name="RingOuter" type="Panel" parent="CanvasLayer/MarginContainer/background/PinkRing"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 10.0
+offset_right = 64.0
+offset_bottom = 70.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pink_outer")
+
+[node name="RingStripe" type="Panel" parent="CanvasLayer/MarginContainer/background/PinkRing"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 10.0
+offset_right = 38.0
+offset_bottom = 38.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pink_stripe")
+
+[node name="RingInner" type="Panel" parent="CanvasLayer/MarginContainer/background/PinkRing"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 16.0
+offset_right = 58.0
+offset_bottom = 64.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pink_inner")
+
+[node name="Gem" type="Panel" parent="CanvasLayer/MarginContainer/background/PinkRing"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 2.0
+offset_right = 47.0
+offset_bottom = 16.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pink_gem")
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/background/PinkRing"]
+layout_mode = 0
+offset_top = 73.0
+offset_right = 68.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(1, 0.55, 0.82, 1)
+theme_override_font_sizes/font_size = 9
+text = "Rose"
+horizontal_alignment = 1

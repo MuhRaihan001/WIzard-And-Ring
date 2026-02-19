@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccyh5m2k26hkw"
-path="res://.godot/imported/grave.jpg-debcf2f42a4701b8108444e4aa95aab7.ctex"
+uid="uid://b6f3y3jgvj1fj"
+path="res://.godot/imported/han.png-88a0866550171c2f4c68038942ec719c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cutscenes/prolog/grave.jpg"
-dest_files=["res://.godot/imported/grave.jpg-debcf2f42a4701b8108444e4aa95aab7.ctex"]
+source_file="res://cutscenes/prolog/han.png"
+dest_files=["res://.godot/imported/han.png-88a0866550171c2f4c68038942ec719c.ctex"]
 
 [params]
 

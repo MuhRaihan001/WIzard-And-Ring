@@ -5,7 +5,7 @@ func _ready() -> void:
 	TextBox.textbox_end.connect(_on_dialog_end)
 	
 	var prolog_dialogs = [
-		{"name": "Venuz", "text": "Tell me your wish....", "image": "res://cutscenes/prolog/grave.jpg"}
+		{"name": "Venuz", "text": "Just give up, Rein. You don't belongs in this era", "image": "res://cutscenes/prolog/han.png"}
 	]
 	
 	TextBox.start_dialog(prolog_dialogs, true)
