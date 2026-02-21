@@ -12,6 +12,7 @@ var target_position: Vector2
 var target_char: CharacterBody2D
 
 signal character_changed(new_player: BaseCharacter)
+signal main_char(char: BaseCharacter)
 
 const TRANSITION_SPEED: float = 300.0
 const TRANSITION_THRESHOLD: float = 5.0
@@ -22,6 +23,7 @@ func _ready() -> void:
 	
 	current_char = han
 	character_changed.emit(han)
+	main_char.emit(han)
 	_activate_character(han)
 	_deactivate_character(rein)
 
@@ -93,6 +95,7 @@ func _complete_transition() -> void:
 	is_transitioning = false
 	node_2d.can_open_menu = true
 	character_changed.emit(current_char)
+	main_char.emit(current_char)
 
 func _reparent_camera(new_parent: CharacterBody2D, old_parent: CharacterBody2D) -> void:
 	var camera = Camera.get_camera()

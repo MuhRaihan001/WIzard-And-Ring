@@ -26,11 +26,13 @@ func _activate_clock_up() -> void:
 	is_clock_up_active = true
 	clock_up_timer = CLOCK_UP_DURATION
 	Engine.time_scale = CLOCK_UP_TIME_SCALE
+	animated_sprite.speed_scale = 1.0 / CLOCK_UP_TIME_SCALE
 
 func _deactivate_clock_up() -> void:
 	await TextBox.start_dialog([{"name": self.name, "text": "Clock Over"}])
 	is_clock_up_active = false
 	Engine.time_scale = 1.0
+	animated_sprite.speed_scale = 1.0
 
 func _process(delta: float) -> void:
 	var real_delta = delta / Engine.time_scale if Engine.time_scale > 0 else delta

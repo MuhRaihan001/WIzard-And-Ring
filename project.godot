@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 TextBox="*res://UI/text_box.tscn"
 Camera="*res://scripts/src/system/camera.gd"
-States="*res://scripts/src/States.gd"
 
 [display]
 

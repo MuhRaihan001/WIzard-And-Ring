@@ -1,7 +1,8 @@
-extends Node
+extends Area2D
 class_name HitBox
 
 @onready var hit_boxes: Area2D = $Hitbox
+signal hitbox_hit_something
 
 func _ready() -> void:
 	hit_boxes.monitoring = false
@@ -14,8 +15,8 @@ func enable_hitbox() -> void:
 	hit_boxes.monitorable = true
 
 func _on_hitbox_hit_entity():
-	hit_boxes.monitoring = true
-	hit_boxes.monitorable = true
+	hit_boxes.monitoring = false
+	hit_boxes.monitorable = false
 
 	
 func _process(delta: float) -> void:

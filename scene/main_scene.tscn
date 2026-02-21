@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b0biip11kcfm2"]
+[gd_scene load_steps=15 format=3 uid="uid://b0biip11kcfm2"]
 
 [ext_resource type="Script" uid="uid://ctft7xw0auo7u" path="res://scripts/main_scene.gd" id="1_qvu5t"]
 [ext_resource type="PackedScene" uid="uid://nmcuofd4fwfm" path="res://scene/maps/main_map.tscn" id="1_ry1uq"]
@@ -13,16 +13,17 @@
 [ext_resource type="PackedScene" uid="uid://bwc56v06055u1" path="res://entity/playable/form/pink_form.tscn" id="10_86xya"]
 [ext_resource type="PackedScene" uid="uid://bmgyjtp4yp4wj" path="res://entity/playable/form/black_form.tscn" id="10_cj0ow"]
 [ext_resource type="PackedScene" uid="uid://b03fmnuonlg0" path="res://entity/playable/form/yellow_form.tscn" id="11_xavy2"]
+[ext_resource type="PackedScene" uid="uid://c0wensu0pjqvc" path="res://entity/playable/form/mecha_form.tscn" id="14_6e7jr"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(18, 3)
 script = ExtResource("1_qvu5t")
 
 [node name="Map" parent="." instance=ExtResource("1_ry1uq")]
-position = Vector2(-5, 5)
+position = Vector2(-13, 4)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("8_pi0uh")]
-position = Vector2(667, 403)
+position = Vector2(668, 403)
 
 [node name="player" parent="." instance=ExtResource("2_fb1ex")]
 position = Vector2(554, 323)
@@ -44,10 +45,6 @@ grow_vertical = 0
 [node name="change_character" parent="." instance=ExtResource("8_hrphr")]
 
 [node name="ring_list" parent="." instance=ExtResource("3_7l8gs")]
-offset_left = -5.0
-offset_top = 5.0
-offset_right = -5.0
-offset_bottom = 5.0
 
 [node name="Ruby" parent="." instance=ExtResource("4_4wnd8")]
 position = Vector2(396.99997, 283)
@@ -67,4 +64,8 @@ scale = Vector2(0.7673426, 0.7673426)
 
 [node name="Sapphire" parent="." instance=ExtResource("9_hrphr")]
 position = Vector2(383, 297)
+scale = Vector2(0.7673426, 0.7673426)
+
+[node name="mecha_form" parent="." instance=ExtResource("14_6e7jr")]
+position = Vector2(396.00006, 316)
 scale = Vector2(0.7673426, 0.7673426)

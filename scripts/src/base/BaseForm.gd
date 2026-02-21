@@ -18,8 +18,8 @@ func can_attack() -> bool:
 func can_run() -> bool:
 	return true
 
-func _set_current_char(char: CharacterBody2D) -> void:
-	current_char = char
+func _set_current_char(character: CharacterBody2D) -> void:
+	current_char = character
 
 func handle_special_input() -> bool:
 	if Input.is_action_just_pressed("transform"):

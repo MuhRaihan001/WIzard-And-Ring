@@ -1,21 +1,29 @@
 extends BaseNpc
 
 @onready var player: CharacterBody2D = $"../player"
-var target_position: Vector2
-var is_moving_to_player: bool = false
+@onready var change_character: Control = $"../change_character"
+
+const FOLLOW_DISTANCE = 20.0
 
 func _on_npc_ready() -> void:
 	$AnimatedSprite2D.play("idle_side")
-	target_position = player.global_position - Vector2(50, 0)
-	is_moving_to_player = true
+	change_character.character_changed.connect(_on_character_changed)
+	player = change_character.current_char as BaseCharacter
+
+func _on_character_changed(new_player: BaseCharacter) -> void:
+	player = new_player
 
 func _physics_process(delta: float) -> void:
-	if is_moving_to_player and not is_dialog_active:
-		var arrived = _move_npc_to_coords(target_position)
-		
-		if arrived:
-			is_moving_to_player = false
-			_face_player()
+	if player == null or is_dialog_active:
+		return
+
+	var target_position = player.global_position - Vector2(FOLLOW_DISTANCE, 0)
+	var distance = global_position.distance_to(player.global_position)
+
+	if distance > FOLLOW_DISTANCE:
+		_move_npc_to_coords(target_position)
+	else:
+		_face_player()
 
 func _can_interact() -> bool:
 	return true

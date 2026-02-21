@@ -2,7 +2,6 @@ extends Node2D
 @onready var canvas_layer: CanvasLayer = $change_character/CanvasLayer
 var can_open_menu: bool = true
 var is_dialog_opened: bool = false
-@onready var select_ring: CanvasLayer = $ring_list/CanvasLayer
 
 func _ready() -> void:
 	canvas_layer.visible = false
@@ -21,8 +20,3 @@ func _process(delta: float) -> void:
 			canvas_layer.visible = true
 		elif Input.is_action_just_released("change_char"):
 			canvas_layer.visible = false
-	
-	if Input.is_action_just_pressed("ui_focus_next"):
-		select_ring.visible = not select_ring.visible
-	elif Input.is_action_just_pressed("ui_cancel"):
-		select_ring.visible = false
