@@ -8,7 +8,6 @@ var is_dialog_active: bool = false
 var interaction_cooldown: float = 0.0
 var attack_detection_radius: float = 50.0
 
-signal npc_get_hit
 signal npc_dead
 
 func _ready() -> void:
@@ -17,7 +16,6 @@ func _ready() -> void:
 	
 	TextBox.textbox_end.connect(_on_dialog_end)
 	TextBox.textbox_start.connect(_on_dialog_start)
-	npc_get_hit.connect(_on_npc_get_hit)
 	npc_dead.connect(_on_npc_dead)
 
 func _process(delta: float) -> void:
@@ -36,10 +34,20 @@ func _setup_interaction_area() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is BaseCharacter:
 		player_nearby = body
-		
+		body.damage_trigger.connect(_receive_damage)
+
 func _on_body_exited(body: Node2D) -> void:
 	if body is BaseCharacter and body == player_nearby:
+		if body.damage_trigger.is_connected(_receive_damage):
+			body.damage_trigger.disconnect(_receive_damage)
 		player_nearby = null
+
+func _receive_damage(total_damage: float) -> void:
+	print(total_damage)
+	health -= total_damage
+	if health <= 0:
+		health = 0
+		npc_dead.emit()
 
 func _on_npc_ready() -> void:
 	pass
@@ -59,13 +67,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 		
 		if distance <= attack_detection_radius and not _can_interact() and player_nearby.can_attack() and event.is_action_pressed("attack"):
-			npc_get_hit.emit()
-
-func _on_npc_get_hit():
-	_set_npc_health(health - 10)
-	if health <= 0:
-		health = 0
-		npc_dead.emit()
+			player_nearby.give_damage()
 		
 func _on_npc_dead():
 	visible = false

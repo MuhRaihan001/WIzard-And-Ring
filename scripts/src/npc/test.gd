@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 		_face_player()
 
 func _can_interact() -> bool:
-	return true
+	return false
 
 func _interact_with_player() -> void:
 	super._interact_with_player()

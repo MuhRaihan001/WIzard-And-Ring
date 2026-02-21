@@ -4,6 +4,7 @@ class_name BaseCharacter
 const SPEED: float = 100.0
 const RUN_BONUS: float = 50.0
 const MAX_HEALTH: float = 100.0
+const BASE_DAMAGE: float = 15.0
 
 const TRANSFORM_SHAKE_STRENGTH: float = 15.0
 const TRANSFORM_SHAKE_DURATION: float = 0.4
@@ -17,6 +18,7 @@ const TRANSFORM_BACK_SHAKE_DURATION: float = 0.3
 enum Direction { DOWN, UP, LEFT, RIGHT, IDLE }
 
 signal radius_range
+signal damage_trigger(total_damage: float)
 
 var is_attacking: bool = false
 var can_move: bool = true
@@ -25,6 +27,7 @@ var is_transformed: bool = false
 var current_form: CharacterBody2D = null
 var last_direction: Direction = Direction.DOWN
 var health: float = MAX_HEALTH
+var bonus_damage: float = 0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
@@ -218,6 +221,12 @@ func add_health(amount: float) -> void:
 
 func take_damage(amount: float) -> void:
 	health = clampf(health - amount, 0.0, MAX_HEALTH)
+
+func _set_bonus_damage(amount: float) -> void:
+	bonus_damage = amount
+
+func give_damage() -> void:
+	damage_trigger.emit(BASE_DAMAGE + bonus_damage)
 
 func is_alive() -> bool:
 	return health > 0.0
