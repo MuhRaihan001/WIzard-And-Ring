@@ -10,6 +10,8 @@ var attack_detection_radius: float = 50.0
 
 signal npc_dead
 
+@onready var collision: CollisionShape2D = $CollisionShape2D
+
 func _ready() -> void:
 	_setup_interaction_area()
 	_on_npc_ready()
@@ -71,6 +73,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 func _on_npc_dead():
 	visible = false
+	collision.disabled = true
 
 func _interact_with_player() -> void:
 	print("Interacting with: ", player_nearby.name)

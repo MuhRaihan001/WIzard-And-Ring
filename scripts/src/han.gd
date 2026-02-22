@@ -7,11 +7,11 @@ extends BaseCharacter
 @onready var pink_ring: Button = $"../ring_list/CanvasLayer/MarginContainer/background/PinkRing"
 @onready var select_ring: CanvasLayer = $"../ring_list/CanvasLayer"
 
-var have_red_ring: bool = false
-var have_blue_ring: bool = false
-var have_yellow_ring: bool = false
-var have_black_ring: bool = false
-var have_pink_ring: bool = false
+var have_red_ring: bool = true
+var have_blue_ring: bool = true
+var have_yellow_ring: bool = true
+var have_black_ring: bool = true
+var have_pink_ring: bool = true
 
 func _character_ready() -> void:
 	allow_transform(true)
